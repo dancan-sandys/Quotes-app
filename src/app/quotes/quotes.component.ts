@@ -8,6 +8,8 @@ import { Quote } from '../quote'
 })
 export class QuotesComponent implements OnInit {
 
+  highestVote:number = 0;
+
 quotes:Quote[] = [
   new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
   new Quote(`Only in the darkness can yQuoteou see the light`, `Martin luther king`, `Marting`, new Date()), 
@@ -27,9 +29,17 @@ deleteQuote(index){
   this.quotes.splice(index,1)
 }
 
-upvote(index){
+upvote(index){ 
+
   this.quotes[index].totalUpvotes = this.quotes[index].totalUpvotes+=1
+   
+  if(this.quotes[index].totalUpvotes > this.highestVote){
+    this.highestVote = this.quotes[index].totalUpvotes
+  }
+
 }
+
+
 
 downvote(index){
   this.quotes[index].totalDownvotes = this.quotes[index].totalDownvotes+=1
