@@ -9,10 +9,10 @@ import { Quote } from '../quote'
 export class QuotesComponent implements OnInit {
 
 quotes:Quote[] = [
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`),
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`),
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`),
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`)
+  new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
+  new Quote(`Only in the darkness can yQuoteou see the light`, `Martin luther king`, `Marting`, new Date()), 
+  new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
+  new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date())
 ]
 
 addNewQuote(quote){
