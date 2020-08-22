@@ -37,6 +37,10 @@ upvote(index){
     this.highestVote = this.quotes[index].totalUpvotes
   }
 
+  if(this.highestVote == this.quotes[index].totalUpvotes){
+    this.quotes[index].highest = true;
+  }
+
 }
 
 

@@ -2,7 +2,7 @@
 
 
 
-    <button (click)='toggleQuote(i)'>  <h4>{{quote.name}}</h4> </button>
+    <button (click)='toggleQuote(i)'>  <h4 [style.color]= "quote.highest ? 'blue' : 'black'">{{quote.name}}</h4> </button>
     <br>
     <div *ngIf='quote.showQuote'>
         <app-quote-details [quote]='quote'></app-quote-details>
