@@ -26,6 +26,17 @@ toggleQuote(index){
 deleteQuote(index){
   this.quotes.splice(index,1)
 }
+
+upvote(index){
+  this.quotes[index].totalUpvotes = this.quotes[index].totalUpvotes+=1
+}
+
+downvote(index){
+  this.quotes[index].totalDownvotes = this.quotes[index].totalDownvotes+=1
+}
+
+
+
   constructor() { }
 
   ngOnInit(): void {
