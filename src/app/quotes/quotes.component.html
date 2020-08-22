@@ -1,12 +1,17 @@
-<ul *ngFor='let quote of quotes' let i='index'>
+<ul *ngFor='let quote of quotes; let i = index'>
 
-    <h4>{{quote.name}}</h4>
 
-    <button (click)='toggleQuote(i)'>Show Quote</button>
 
+    <button (click)='toggleQuote(i)'>  <h4>{{quote.name}}</h4> </button>
+    <br>
     <div *ngIf='quote.showQuote'>
         <app-quote-details [quote]='quote'></app-quote-details>
     </div>
+    <button> Delete Quote </button>
+    <button> Upvote </button>
+    <button> Downvote </button>
+
+
 
 </ul>
 
