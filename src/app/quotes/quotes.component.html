@@ -1,9 +1,13 @@
-<ul *ngFor='let quote of quotes'>
+<ul *ngFor='let quote of quotes' let i='index'>
 
     <h4>{{quote.name}}</h4>
 
-    <app-quote-details [quote]='quote'></app-quote-details>
+    <button (click)='toggleQuote(i)'>Show Quote</button>
+
+    <div *ngIf='quote.showQuote'>
+        <app-quote-details [quote]='quote'></app-quote-details>
+    </div>
 
 </ul>
 
-<app-quote-form></app-quote-form>
+<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
