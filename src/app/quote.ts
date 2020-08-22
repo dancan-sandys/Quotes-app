@@ -1,5 +1,5 @@
 export class Quote {
-    constructor(name:string, details:any){
+    constructor(public name:string, public details:any){
 
     }
 }
