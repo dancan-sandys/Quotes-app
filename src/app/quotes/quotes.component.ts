@@ -22,6 +22,10 @@ this.quotes.push(quote)
 toggleQuote(index){
   this.quotes[index].showQuote = !this.quotes[index].showQuote
 }
+
+deleteQuote(index){
+  this.quotes.splice(index,1)
+}
   constructor() { }
 
   ngOnInit(): void {
