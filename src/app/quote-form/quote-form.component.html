@@ -9,7 +9,7 @@
     </div>
 
     <div class="formgroup">
-        <label for="quote">Who is the authur<input type="text" [(ngModel)] = "newQuote.details" name="details" #details = 'ngModel' required></label>
+        <label for="quote">Enter the authur's name: <input type="text" [(ngModel)] = "newQuote.details" name="details" #details = 'ngModel' required></label>
         <div [hidden]="details.valid || details.pristine" class="alert alert-danger">
             <p>Quote details are required</p>
         </div>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="formgroup">
-        <label for="quote">Who is the authur<input type="text" [(ngModel)] = "newQuote.poster" name="poster" #poster = 'ngModel' required></label>
+        <label for="quote">Enter Your Name: <input type="text" [(ngModel)] = "newQuote.poster" name="poster" #poster = 'ngModel' required></label>
         <div [hidden]="poster.valid || poster.pristine" class="alert alert-danger">
             <p>Quote poster is required</p>
         </div>

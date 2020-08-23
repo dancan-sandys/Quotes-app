@@ -1,6 +1,6 @@
 <p>Click on the quote to view details</p>
 
-<ul *ngFor='let quote of quotes; let i = index'>
+<ul class="card" *ngFor='let quote of quotes; let i = index'>
 
 
 
@@ -12,10 +12,12 @@
 
     <p>Upvotes: {{quote.totalUpvotes}}</p>
     <p>Downvotes: {{quote.totalDownvotes}}</p>
-    <button (click)='deleteQuote(i)'> Delete Quote </button>
-    <button (click)='upvote(i)'> Upvote </button>
-    <button (click)='downvote(i)'> Downvote </button>
 
+    <div class="votesection">
+        <button (click)='deleteQuote(i)'> Delete Quote </button>
+        <button (click)='upvote(i)'> Upvote </button>
+        <button (click)='downvote(i)'> Downvote </button>
+    </div>
 
 
 
