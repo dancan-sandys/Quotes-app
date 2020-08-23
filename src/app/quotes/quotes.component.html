@@ -13,13 +13,13 @@
                 </div>
 
 
-                <div class="voting">
-                    <div class="votesection">
-                        <button (click)='deleteQuote(i)'> Delete Quote </button>
+                <div class="voting row">
+                    <div class="votesection col-md-6">
+                        <button class="deleter" (click)='deleteQuote(i)'> Delete Quote </button>
                         <button (click)='upvote(i)'> Upvote </button>
                         <button (click)='downvote(i)'> Downvote </button>
                     </div>
-                    <div class="votes">
+                    <div class="votes col-md-6">
                         <p>Upvotes: {{quote.totalUpvotes}} .</p>
                         <br>
                         <p>Downvotes: {{quote.totalDownvotes}} .</p>
