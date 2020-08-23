@@ -46,3 +46,13 @@ row {
         width: 90%;
     }
 }
+
+h1 {
+    color: white;
+    font-size: 48px;
+}
+
+.notice {
+    color: white;
+    font-size: large;
+}
