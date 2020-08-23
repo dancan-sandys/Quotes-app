@@ -1,7 +1,7 @@
 <div class="quotebody">
     <p>Click on the quote to view details</p>
     <div class="row">
-        <div class="container col">
+        <div class="container col-md-6">
             <ul class="card" *ngFor='let quote of quotes; let i = index'>
 
 
@@ -29,7 +29,7 @@
             </ul>
         </div>
 
-        <div class="col">
+        <div class="col-md-6">
             <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
 

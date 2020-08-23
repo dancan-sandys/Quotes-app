@@ -13,10 +13,9 @@ export class QuotesComponent implements OnInit {
   highestVote = 0;
 
   quotes: Quote[] = [
-    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
-    new Quote(`Only in the darkness can yQuoteou see the light`, `Martin luther king`, `Marting`, new Date()),
-    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
-    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date())
+    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date(2020, 2, 8)),
+    new Quote(`Only in the darkness can yQuoteou see the light`, `Martin luther king`, `Marting`, new Date(2020 ,1,8)),
+   
   ]
 
  
