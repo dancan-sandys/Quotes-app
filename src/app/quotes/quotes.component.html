@@ -8,7 +8,7 @@
         <app-quote-details [quote]='quote'></app-quote-details>
     </div>
 
-    <p>{{quote.totalUpvotes}}</p>
+    <p appHighlighter>{{quote.totalUpvotes}}</p>
     <p>{{quote.totalDownvotes}}</p>
     <button (click)='deleteQuote(i)'> Delete Quote </button>
     <button (click)='upvote(i)'> Upvote </button>

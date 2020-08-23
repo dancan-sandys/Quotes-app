@@ -38,8 +38,11 @@ upvote(index){
   }
 
   if(this.highestVote == this.quotes[index].totalUpvotes){
+    
     this.quotes[index].highest = true;
   }
+
+  else   this.quotes[index].highest =false;
 
 }
 
