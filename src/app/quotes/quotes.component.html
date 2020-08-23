@@ -1,26 +1,35 @@
 <p>Click on the quote to view details</p>
+<div class="row">
+    <div class="container col">
+        <ul class="card" *ngFor='let quote of quotes; let i = index'>
 
-<ul class="card" *ngFor='let quote of quotes; let i = index'>
 
 
+            <button (click)='toggleQuote(i)'>  <h4 [style.color]= "quote.highest ? 'blue' : 'black'">{{quote.name}}</h4> </button>
+            <br>
+            <div *ngIf='quote.showQuote'>
+                <app-quote-details [quote]='quote'></app-quote-details>
+            </div>
 
-    <button (click)='toggleQuote(i)'>  <h4 [style.color]= "quote.highest ? 'blue' : 'black'">{{quote.name}}</h4> </button>
-    <br>
-    <div *ngIf='quote.showQuote'>
-        <app-quote-details [quote]='quote'></app-quote-details>
+
+            <div class="voting">
+                <div class="votesection">
+                    <button (click)='deleteQuote(i)'> Delete Quote </button>
+                    <button (click)='upvote(i)'> Upvote </button>
+                    <button (click)='downvote(i)'> Downvote </button>
+                </div>
+                <div class="votes">
+                    <p>Upvotes: {{quote.totalUpvotes}} .</p>
+                    <br>
+                    <p>Downvotes: {{quote.totalDownvotes}} .</p>
+                </div>
+            </div>
+
+        </ul>
     </div>
 
-    <p>Upvotes: {{quote.totalUpvotes}}</p>
-    <p>Downvotes: {{quote.totalDownvotes}}</p>
-
-    <div class="votesection">
-        <button (click)='deleteQuote(i)'> Delete Quote </button>
-        <button (click)='upvote(i)'> Upvote </button>
-        <button (click)='downvote(i)'> Downvote </button>
+    <div class="col">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
 
-
-
-</ul>
-
-<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+</div>

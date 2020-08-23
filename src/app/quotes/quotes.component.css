@@ -1,3 +1,18 @@
 .card {
-    width: 50%;
+    width: 100%;
+}
+
+.votesection {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.votes {
+    display: flex;
+    padding-right: 1%;
+}
+
+.voting {
+    display: flex;
 }

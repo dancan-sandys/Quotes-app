@@ -1,4 +1,6 @@
-<form (ngSubmit)='submitQuote()' #quoteForm='ngForm' action="submit">
+<form (ngSubmit)='submitQuote()' #quoteForm='ngForm' action="submit" class="card">
+
+    <h5>Add A quote</h5>
     <div class="formgroup">
         <label for="quote">Enter Your Quote:<input type="text" id="quote" [(ngModel)]  = "newQuote.name" name="name" #name = 'ngModel' required></label>
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
