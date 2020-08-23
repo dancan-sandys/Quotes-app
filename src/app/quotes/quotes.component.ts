@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote'
- 
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -8,49 +8,64 @@ import { Quote } from '../quote'
 })
 export class QuotesComponent implements OnInit {
 
-  highestVote:number = 0;
+  voteCount:any = [0,1]
 
-quotes:Quote[] = [
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
-  new Quote(`Only in the darkness can yQuoteou see the light`, `Martin luther king`, `Marting`, new Date()), 
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
-  new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date())
-]
+  highestVote = 0;
 
-addNewQuote(quote){
-this.quotes.push(quote)
-}
+  quotes: Quote[] = [
+    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
+    new Quote(`Only in the darkness can yQuoteou see the light`, `Martin luther king`, `Marting`, new Date()),
+    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date()),
+    new Quote(`Only in the darkness can you see the light`, `Martin luther king`, `Marting`, new Date())
+  ]
 
-toggleQuote(index){
-  this.quotes[index].showQuote = !this.quotes[index].showQuote
-}
+ 
 
-deleteQuote(index){
-  this.quotes.splice(index,1)
-}
-
-upvote(index){ 
-
-  this.quotes[index].totalUpvotes = this.quotes[index].totalUpvotes+=1
-   
-  if(this.quotes[index].totalUpvotes > this.highestVote){
-    this.highestVote = this.quotes[index].totalUpvotes
+  addNewQuote(quote) {
+    this.quotes.push(quote)
   }
 
-  if(this.highestVote == this.quotes[index].totalUpvotes){
+  toggleQuote(index) {
+    this.quotes[index].showQuote = !this.quotes[index].showQuote
+  }
+
+  deleteQuote(index) {
+    this.quotes.splice(index, 1)
+  }
+
+  
+
+  upvote(index) {
+
     
-    this.quotes[index].highest = true;
+
+    this.quotes[index].totalUpvotes = this.quotes[index].totalUpvotes += 1
+
+    this.highestVote = Math.max(...this.voteCount);
+
+    if (this.quotes[index].totalUpvotes > this.highestVote) {
+      
+      this.quotes[index].highest = true;
+      
+    }
+
+    
+    else this.quotes[index].highest = false;
+
+    this.voteCount.push(this.quotes[index].totalUpvotes)
+    
+    
+
+
   }
 
-  else   this.quotes[index].highest =false;
-
-}
 
 
 
-downvote(index){
-  this.quotes[index].totalDownvotes = this.quotes[index].totalDownvotes+=1
-}
+
+  downvote(index) {
+    this.quotes[index].totalDownvotes = this.quotes[index].totalDownvotes += 1
+  }
 
 
 

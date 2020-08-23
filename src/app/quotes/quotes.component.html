@@ -1,3 +1,5 @@
+<p>Click on the quote to view details</p>
+
 <ul *ngFor='let quote of quotes; let i = index'>
 
 
@@ -8,8 +10,8 @@
         <app-quote-details [quote]='quote'></app-quote-details>
     </div>
 
-    <p appHighlighter>{{quote.totalUpvotes}}</p>
-    <p>{{quote.totalDownvotes}}</p>
+    <p>Upvotes: {{quote.totalUpvotes}}</p>
+    <p>Downvotes: {{quote.totalDownvotes}}</p>
     <button (click)='deleteQuote(i)'> Delete Quote </button>
     <button (click)='upvote(i)'> Upvote </button>
     <button (click)='downvote(i)'> Downvote </button>
