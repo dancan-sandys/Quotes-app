@@ -16,3 +16,14 @@
 .voting {
     display: flex;
 }
+
+.votesection button {
+    height: 5vh;
+    border-radius: 24px;
+}
+
+.thequote {
+    border-radius: 11px;
+    margin-right: 5%;
+    margin-top: 2%;
+}

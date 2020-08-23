@@ -1,32 +1,37 @@
 <form (ngSubmit)='submitQuote()' #quoteForm='ngForm' action="submit" class="card">
 
     <h5>Add A quote</h5>
-    <div class="formgroup">
-        <label for="quote">Enter Your Quote:<input type="text" id="quote" [(ngModel)]  = "newQuote.name" name="name" #name = 'ngModel' required></label>
+    <div class="form-group">
+        <div class="input">
+            <label for="quote">Enter Your Quote:</label><input type="text" id="quote" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
+        </div>
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
 
-            <p> Name field is required </p>
+            <p> Quote field is required </p>
         </div>
 
     </div>
 
-    <div class="formgroup">
-        <label for="quote">Enter the authur's name: <input type="text" [(ngModel)] = "newQuote.details" name="details" #details = 'ngModel' required></label>
+    <div class="form-group">
+        <div class="input">
+            <label for="quote">Enter the authur's name:</label> <input type="text" [(ngModel)]="newQuote.details" name="details" #details='ngModel' required>
+        </div>
         <div [hidden]="details.valid || details.pristine" class="alert alert-danger">
-            <p>Quote details are required</p>
+            <p>Original authur required</p>
         </div>
 
     </div>
 
-    <div class="formgroup">
-        <label for="quote">Enter Your Name: <input type="text" [(ngModel)] = "newQuote.poster" name="poster" #poster = 'ngModel' required></label>
+    <div class="form-group">
+        <div class="input">
+            <label for="quote">Enter Your Name: </label><input type="text" [(ngModel)]="newQuote.poster" name="poster" #poster='ngModel' required>
+        </div>
         <div [hidden]="poster.valid || poster.pristine" class="alert alert-danger">
-            <p>Quote poster is required</p>
+            <p>Your name is required</p>
         </div>
 
     </div>
 
-    Display {{newQuote.name}} Display {{newQuote.details}}
 
     <div>
         <button type="submit">Add Quote</button>
