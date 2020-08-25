@@ -1,16 +1,36 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { hostViewClassName } from '@angular/compiler';
 
 @Directive({
-  selector: '[appHighlighter]'
+  selector: '[appHighlighter]',
+  host : {'[class.true]': 'select()'}
+    
+  
 })
 export class HighlighterDirective {
 
-  constructor(private elem: ElementRef){
-    this.elem.nativeElement.style.color = 'blue'
-  }
+private el:ElementRef;
+constructor(el:ElementRef){
+  this.el = el;
+} 
+
+@Input ()
+elements;
 
 
+select(){
+  this.elements.forEach(elt => {
+    elt.unselect();
+    
+  });
 
+  this.el.nativeElement.style.color = 'blue'
+
+}
+
+unselect() {
+  this.el.nativeElement.style.color = 'black'
+}
 
 
 
